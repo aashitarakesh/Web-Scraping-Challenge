@@ -1,0 +1,12 @@
+#feature_id{
+  max-width:600px; 
+  max-height: 800px;
+}
+
+#image_id {
+  float: left;
+  width: 800px;
+  height: 800px;
+  object-fit: fill;
+  margin-bottom: 10px;
+  }
