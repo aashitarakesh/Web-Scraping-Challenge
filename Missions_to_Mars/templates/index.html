@@ -7,7 +7,36 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission To Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/styles.css">
+  <!-- <link rel="stylesheet" href="../static/styles.css"> -->
+
+  <style>
+
+   table.dataframe.dataframe th, .dataframe td {
+     border: 1;
+     border-bottom: 1px;
+     border-collapse: collapse;
+     text-align: left;
+     padding: 10px;
+     margin-bottom: 40px;
+     font-size: 0.9em;
+     column-width: auto;
+     }
+
+   tr:nth-child(odd)		{ 
+      background-color:#eee; 
+      }
+   tr:nth-child(even)	{ 
+      background-color:#fff; 
+    }
+
+   #image_id {
+    width: 500px;
+    height: 500px;
+    object-fit: fill;
+   }
+  </style>
+
+  
 </head>
 
 <!-- Create Container -->
@@ -30,13 +59,13 @@
     <!-- Featured Image -->
   <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <h3><b>Featured Mars Image</b></h3>
-            <img src="{{mars_data.featured_image}}"  alt="Featured Mars Image" id="feature_id">
+            <img src="{{mars_data.featured_image}}"  alt="Featured Mars Image" style="  max-width:600px; max-height: 800px;">
         </div> 
       <!-- Mars HTML Facts Table -->
-        <div class="col-md-3">
-          <div class="card" style= "width: 27rem;">
+        <div class="col-md-4">
+          <div class="card " >
             <div class="card-body">
               <h3><b>Mars Facts</b></h3>
                <div>
@@ -56,10 +85,10 @@
         <div class="row">
           {% for img in mars_data.hemisphere_img %}
           <div class="col-md-6 ">
-            <div class="card" style="size: 25rem;">
+            <div class="card" >
               <img src="{{ img.img_url}}" class="card-img-top" id="image_id" alt="{{ img.title }}">
               <div class="card-body">
-                <p class="card-text"><b> {{ img.title }} </b></p>
+                <h4 class="card-title"> {{ img.title }} </h4>
               </div>
             </div>
           </div>
